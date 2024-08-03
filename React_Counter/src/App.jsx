@@ -1,33 +1,27 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 function App() {
-
-  //useState() is the Hook
-
-  let [counter, setCounter] = useState(9)
-  
-  // let counter = 9
+  // Initialize state with useState hook
+  let [counter, setCounter] = useState(9);
 
   const addValue = () => {
-    //UI updation controlled by React
-    counter = counter + 1; 
-    setCounter(counter);
-    console.log("Counter Value", counter); 
+    // Increment counter and ensure it doesn't exceed 20
+    setCounter(prevCounter => Math.min(prevCounter + 1, 20));
   }
+
   const decValue = () => {
-    counter = counter - 1;
-    setCounter(counter);
-    console.log("Counter Value", counter);
+    // Decrement counter and ensure it doesn't go below 0
+    setCounter(prevCounter => Math.max(prevCounter - 1, 0));
   }
 
   return (
     <>
       <h1>First Application</h1>
       <h2>Counter: {counter}</h2>
-      <button onClick={addValue}>Increment Value {counter}</button>
-      <button onClick={decValue}>Decrement Value{counter}</button>
+      <button onClick={addValue}>Increment Value</button>
+      <button onClick={decValue}>Decrement Value</button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
