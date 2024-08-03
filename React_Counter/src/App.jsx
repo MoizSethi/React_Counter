@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 function App() {
   // Initialize state with useState hook
-  let [counter, setCounter] = useState(9);
+  let [counter, setCounter] = useState(10);
 
   const addValue = () => {
     // Increment counter and ensure it doesn't exceed 20
@@ -18,8 +18,8 @@ function App() {
     <>
       <h1>First Application</h1>
       <h2>Counter: {counter}</h2>
-      <button onClick={addValue}>Increment Value</button>
-      <button onClick={decValue}>Decrement Value</button>
+      <button onClick={addValue}>Increment Value {counter}</button>
+      <button onClick={decValue}>Decrement Value {counter}</button>
     </>
   );
 }
