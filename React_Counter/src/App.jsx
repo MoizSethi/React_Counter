@@ -19,7 +19,7 @@ function App() {
       <h1>First Application</h1>
       <h2>Counter: {counter}</h2>
       <button onClick={addValue}>Increment Value {counter}</button>
-      <button onClick={decValue}>Decrement Value {counter}</button>
+      <button onClick={decValue}>Decrement Value gi{counter}</button>
     </>
   );
 }
